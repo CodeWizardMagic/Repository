@@ -9,7 +9,7 @@ public class MatrixMain {
         Scanner scan = new Scanner(System.in);
 
         //Matrix:
-        System.out.println("Write down: your first matrix: ");
+        System.out.println("Write down your first 3x3 matrix: ");
         try {
             Matrix matrix = new Matrix(3, 3);
             for (int i = 0; i < matrix.rows; i++) {
@@ -17,7 +17,7 @@ public class MatrixMain {
                     matrix.matrix[i][j] = scan.nextDouble();
                 }
             }
-            System.out.println("Write down your second matrix: ");
+            System.out.println("Write down your second 3x3 matrix: ");
             Matrix matrix2 = new Matrix(3, 3);
             for (int i = 0; i < matrix2.rows; i++) {
                 for (int j = 0; j < matrix2.columns; j++) {
@@ -29,10 +29,11 @@ public class MatrixMain {
 
             if(Objects.equals(a,'+'))Matrix.add(matrix,matrix2);
             else if(Objects.equals(a,'-'))Matrix.minus(matrix,matrix2);
+            System.out.println();
+            Matrix.multy(matrix,4);
         }catch (InputMismatchException e){
             System.out.println("Write integers!");
         }
-
 
     }
 }
